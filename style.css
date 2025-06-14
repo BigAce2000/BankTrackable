@@ -1,0 +1,294 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f1f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+.receipt-container {
+  max-width: 420px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+.header {
+  background: #1a67f3;
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.logo .icon {
+  background: orange;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.txn-id {
+  font-size: 12px;
+  text-align: right;
+}
+
+.txn-id span {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.title-section {
+  background: #1a67f3;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.title-section h2 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.title-section p {
+  font-size: 13px;
+  margin: 4px 0 12px;
+}
+
+.transfer-box {
+  background: #236df5;
+  color: white;
+  text-align: center;
+  padding: 16px;
+}
+
+.transfer-box .label {
+  font-size: 13px;
+}
+
+.transfer-box h1 {
+  font-size: 32px;
+  margin: 8px 0;
+}
+
+.status-section {
+  padding: 16px;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-header h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.tracking {
+  background: #e4e7ec;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+
+.status-step {
+  display: flex;
+  align-items: flex-start;
+  margin: 12px 0;
+}
+
+.status-step .icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.green {
+  background: #00c851;
+}
+
+.yellow {
+  background: #ffbb33;
+}
+
+.gray {
+  background: #ccc;
+}
+
+.green-text { color: #00c851; }
+.yellow-text { color: #ff8800; }
+.gray-text { color: #999; }
+
+.badge {
+  background: #fff3cd;
+  color: #856404;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
+.pending {
+  color: gray;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.secure-box {
+  background: #e8f1ff;
+  border-left: 4px solid #1a67f3;
+  padding: 10px;
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+.recipient-section {
+  padding: 16px;
+}
+
+.recipient-info {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.message-box {
+  font-size: 13px;
+  background: #f6f6f6;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.txn-info.updated {
+  padding: 16px;
+}
+
+.txn-info.updated h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.txn-detail-box {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.txn-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.txn-item:last-child {
+  border-bottom: none;
+}
+
+.txn-item .label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.txn-item .value {
+  font-weight: 600;
+  color: #333;
+}
+
+.reference-box {
+  background: #eaf1ff;
+  text-align: center;
+  padding: 16px;
+}
+
+.reference-box h2 {
+  margin: 4px 0;
+  color: #1a67f3;
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0 20px;
+  background: #f9f9f9;
+}
+
+.footer-actions button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Form Styles (Minimal) */
+.form-container {
+  max-width: 420px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+.form-container h2 {
+  font-size: 16px;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-container label {
+  font-size: 14px;
+}
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.form-container button {
+  background: #1a67f3;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
