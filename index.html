@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coinbase Transfer Receipt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Form for Editable Fields -->
+  <div class="form-container">
+    <h2>Edit Receipt Details</h2>
+    <form id="receiptForm">
+      <label>Date: <input type="text" id="txnDate" value="Wednesday, June 11, 2025"></label><br>
+      <label>Transfer Amount: <input type="text" id="transferAmount" value="£600"></label><br>
+      <label>From: <input type="text" id="transferFrom" value="Wells Fargo"></label><br>
+      <label>To: <input type="text" id="transferTo" value="BigAce"></label><br>
+      <label>Recipient Country: 
+        <select id="recipientCountry">
+          <option value="United States|🇺🇸" selected>🇺🇸 United States</option>
+          <option value="United Kingdom|🇬🇧">🇬🇧 United Kingdom</option>
+          <option value="Canada|🇨🇦">🇨🇦 Canada</option>
+          <option value="Australia|🇦🇺">🇦🇺 Australia</option>
+          <option value="Nigeria|🇳🇬">🇳🇬 Nigeria</option>
+          <option value="Japan|🇯🇵">🇯🇵 Japan</option>
+          <option value="Germany|🇩🇪">🇩🇪 Germany</option>
+          <option value="France|🇫🇷">🇫🇷 France</option>
+          <!-- Add more countries as needed -->
+        </select>
+      </label><br>
+      <label>Transfer Message: <input type="text" id="transferMessage" value="Your payment is on hold you need to make a payment of "></label><br>
+      <label>Processing Date: <input type="text" id="processingDate" value="June 11"></label><br>
+      <label>Expected Completion: <input type="text" id="expectedCompletion" value="June 11"></label><br>
+      <label>Transfer Fee: <input type="text" id="transferFee" value="£800"></label><br>
+      <label>Fee Percentage: <input type="text" id="feePercentage" value="99%"></label><br>
+      <button type="submit" id="generateReceipt">Generate Receipt</button>
+    </form>
+  </div>
+
+  <!-- Receipt Container -->
+  <div class="receipt-container">
+    <div class="header">
+      <div class="logo">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 10L12 3l9 7H3z" fill="#bdc3c7"/>
+  <rect x="4" y="10" width="2" height="8" fill="#34495e"/>
+  <rect x="9" y="10" width="2" height="8" fill="#34495e"/>
+  <rect x="14" y="10" width="2" height="8" fill="#34495e"/>
+  <rect x="18" y="10" width="2" height="8" fill="#34495e"/>
+  <path d="M2 18h20v2H2z" fill="#2c3e50"/>
+</svg></div>
+        <span>Bank Transfer</span>
+      </div>
+      <div class="txn-id">
+        <small>Transaction ID</small><br />
+        <span id="txnIdDisplay">#TXN36847975</span>
+      </div>
+    </div>
+
+    <div class="title-section">
+      <h2>ELECTRONIC TRANSFER RECEIPT</h2>
+      <p id="txnDateDisplay">Wednesday, June 11, 2025</p>
+    </div>
+
+    <div class="transfer-box">
+      <p class="label">Transfer Amount</p>
+      <h1 id="transferAmountDisplay">£600</h1>
+      <p><strong>From:</strong> <span id="transferFromDisplay">Coinbase</span></p>
+      <p><strong>To:</strong> <span id="transferToDisplay">Peter</span></p>
+    </div>
+
+    <div class="status-section">
+      <div class="status-header">
+        <h3>Transfer Status</h3>
+        <span class="tracking">Live Tracking</span>
+      </div>
+      <div class="status-step">
+        <div class="icon green"></div>
+        <div>
+          <strong class="green-text">Submitted</strong>
+          <span class="time">11:14 AM</span><br />
+          <span>Transfer request created and verified</span>
+        </div>
+      </div>
+      <div class="status-step">
+        <div class="icon yellow"></div>
+        <div>
+          <strong class="yellow-text">Processing</strong>
+          <span class="badge">In Progress</span><br />
+          <span>Confirmed by receiving bank</span>
+        </div>
+      </div>
+      <div class="status-step">
+        <div class="icon gray"></div>
+        <div>
+          <strong class="gray-text">Complete</strong>
+          <span class="pending">Pending</span><br />
+          <span id="transferMessageDisplay">Your payment is on hold. You need to make a payment of £800.</span>
+        </div>
+      </div>
+
+      <div class="secure-box">
+        <strong>🔒 Secure Transfer:</strong> This transaction is protected by bank-level encryption
+      </div>
+    </div>
+
+    <div class="recipient-section">
+      <h3>Recipient Details</h3>
+      <div class="recipient-info">
+        <strong id="transferToDisplay2">Peter</strong><br />
+        <span id="recipientCountryDisplay">🇺🇸 United States</span>
+      </div>
+      <div class="message-box">
+        <strong>Transfer Message:</strong><br />
+        <em id="transferMessageDisplay2">"Your payment is on hold you need to make a payment of "</em>
+      </div>
+    </div>
+
+    <div class="txn-info updated">
+      <h3>Transaction Information</h3>
+      <div class="txn-detail-box">
+        <div class="txn-item">
+          <span class="label">📅 Processing Date</span>
+          <span class="value" id="processingDateDisplay">June 11</span>
+        </div>
+        <div class="txn-item">
+          <span class="label">📅 Expected Completion</span>
+          <span class="value" id="expectedCompletionDisplay">June 11</span>
+        </div>
+        <div class="txn-item">
+          <span class="label">💷 Transfer Fee</span>
+          <span class="value" id="transferFeeDisplay">£800</span>
+        </div>
+        <div class="txn-item">
+          <span class="label">📊 Fee Percentage</span>
+          <span class="value" id="feePercentageDisplay">99%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reference-box">
+      <p>REFERENCE NUMBER</p>
+      <h2 id="referenceNumberDisplay">REF–9636847977</h2>
+      <small>Keep this number for your records</small>
+    </div>
+
+    <div class="footer-actions">
+      <button>⬇️ Download</button>
+      <button id="shareButton">🔗 Share</button>
+      <button>🖨️ Print</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
